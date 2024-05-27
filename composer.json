@@ -1,0 +1,21 @@
+{
+    "name": "scaleflex/tiny-common",
+    "type": "project",
+    "description": "This is common use for tiny framework",
+    "keywords": ["api-filerobot", "share-api"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "illuminate/events": "^11.8",
+        "illuminate/routing": "^11.8",
+        "illuminate/database": "^11.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Scaleflex\\Commons\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
