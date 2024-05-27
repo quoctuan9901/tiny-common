@@ -14,14 +14,14 @@ class Telegram
     private function __construct()
     {
         $this->client = new Client();
-        $this->apiUrl = 'https://api.telegram.org/bot' . config('config', 'telegram.bot') . '/sendMessage';
+        $this->apiUrl = 'https://api.telegram.org/bot' . Helper::config('config', 'telegram.bot') . '/sendMessage';
     }
 
     // Public static method to send notifications
     public static function send($message, $parseMode = 'HTML')
     {
         $telegram = new self();
-        $response = $telegram->sendMessage(config('config', 'telegram.group_id'), $message, $parseMode);
+        $response = $telegram->sendMessage(Helper::config('config', 'telegram.group_id'), $message, $parseMode);
         if ($response['ok']) {
             return new Response(json_encode(['status' => 'success', 'message' => 'Notification sent']), Response::HTTP_OK, ['Content-Type' => 'application/json']);
         }
