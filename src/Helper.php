@@ -4,7 +4,7 @@ namespace Scaleflex\Commons;
 
 class Helper {
 
-    public function config($filename, $keyPath) {
+    public static function config($filename, $keyPath) {
         $filePath = __DIR__ . "/../../config/$filename.php";
         if (!file_exists($filePath)) {
             return "Not found config";
